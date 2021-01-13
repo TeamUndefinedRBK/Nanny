@@ -1,8 +1,19 @@
 <form>
   <div class="form-group">
     <h5>Upload Profile Pic</h5>
-    <input type="file" (change)="onFileSelected($event)" />
+    <input
+      style="display: none"
+      type="file"
+      (change)="onFileSelected($event)"
+      #fileInput
+    />
+    <button type="button" (click)="fileInput.click()">Pick File</button>
     <button type="button" (click)="onUpload()">Upload</button>
+
+    <br />
+    <br />
+    <br />
+
     <label for="firstName">First Name</label>
     <input
       required
@@ -27,6 +38,11 @@
       type="text"
       class="form-control"
     />
+
+    <br />
+    <br />
+    <br />
+
     <label for="age">age: </label>
     <input
       required
@@ -51,6 +67,11 @@
       type="email"
       class="form-control"
     />
+
+    <br />
+    <br />
+    <br />
+
     <label for="region">region: </label>
     <input
       required
@@ -75,6 +96,10 @@
       type="number"
       class="form-control"
     />
+
+    <br />
+    <br />
+    <br />
   </div>
 
   <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
