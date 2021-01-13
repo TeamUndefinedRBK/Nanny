@@ -1,0 +1,138 @@
+<form>
+  <div class="form-group">
+    <h5>Upload Profile Pic</h5>
+    <input
+      style="display: none"
+      type="file"
+      (change)="onFileSelected($event)"
+      #fileInput
+    />
+    <button type="button" (click)="fileInput.click()">Pick File</button>
+    <button type="button" (click)="onUpload()">Upload</button>
+
+    <br />
+    <br />
+    <br />
+
+    <label for="firstName">First Name</label>
+    <input
+      required
+      minlength="5"
+      maxlength="20"
+      ngModel
+      name="firstName"
+      #firstName="ngModel"
+      id="firstName"
+      type="text"
+      class="form-control"
+    />
+    <label for="lastname">Last Name: </label>
+    <input
+      required
+      minlength="5"
+      maxlength="20"
+      ngModel
+      name="lastName"
+      #lastname="ngModel"
+      id="lastName"
+      type="text"
+      class="form-control"
+    />
+
+    <br />
+    <br />
+    <br />
+
+    <label for="age">age: </label>
+    <input
+      required
+      minlength="1"
+      maxlength="2"
+      ngModel
+      name="age"
+      #age="ngModel"
+      id="age"
+      type="number"
+      class="form-control"
+    />
+    <label for="email">email: </label>
+    <input
+      required
+      minlength="5"
+      maxlength="20"
+      ngModel
+      name="email"
+      #email="ngModel"
+      id="email"
+      type="email"
+      class="form-control"
+    />
+
+    <br />
+    <br />
+    <br />
+
+    <label for="region">region: </label>
+    <input
+      required
+      minlength="5"
+      maxlength="20"
+      ngModel
+      name="region"
+      #region="ngModel"
+      id="region"
+      type="text"
+      class="form-control"
+    />
+    <label for="phoneNumber">Phone Number: </label>
+    <input
+      required
+      minlength="5"
+      maxlength="20"
+      ngModel
+      name="phonenumber"
+      #phonenumber="ngModel"
+      id="phonenumber"
+      type="number"
+      class="form-control"
+    />
+
+    <br />
+    <br />
+    <br />
+  </div>
+
+  <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+    <div *ngIf="firstName.errors?.required">First Name is required.</div>
+
+    <div *ngIf="firstName.errors?.minlength">
+      First Name minimum
+      {{ firstName.errors?.minlength.requiredLength }} characters.
+    </div>
+
+    <div *ngIf="firstName.errors?.maxlength">
+      First Name should be maximum{{
+        firstName.errors?.maxlength.requiredLength
+      }}
+      characters.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="about">About</label
+    ><textarea
+      ngModel
+      name="about"
+      id="about"
+      cols="30"
+      rows="10"
+      class="form-control"
+      required
+      minlength="10"
+      maxlength="500"
+      #email="ngModel"
+      type="text"
+    ></textarea>
+  </div>
+  <button class="btn btnOne">Submit</button>
+</form>
