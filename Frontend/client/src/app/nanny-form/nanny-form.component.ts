@@ -11,27 +11,46 @@ export class NannyFormComponent {
 
   onSubmit(data) {
     this.http.post('', data).subscribe((res) => {
-     console.warn('res', res);
-   });
+      console.warn('res', res);
+    });
     console.warn(data);
   }
 
-  
   constructor(private http: HttpClient) {}
+  ngOnInit() {}
+  url = './assets/';
   log(test: string) {
     console.log(test);
   }
   onFileSelected(event) {
+    if (event.target.files) {
+      var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload = (event: any) => {
+        this.url = event.target.result;
+      };
+    }
     this.selectedFile = <File>event.target.files[0];
   }
   onUpload() {
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
-    this.http;
-    // UNCOMMENT  /////////////////////////
-    // .post('FIRE_BASE_LINK_YA_GHASSEN_WALA_A3MEL_LOCAL_STORAGE', fd)
-    // .subscribe((res) => {
-    //   console.log(res);
-    // });
+    this.http
+      .post('/', fd, {
+        reportProgress: true,
+        observe: 'events',
+      })
+      .subscribe((event) => {
+        if (event.type === HttpEventType.UploadProgress) {
+          console.warn(
+            'upload progress: ' +
+              Math.round((event.loaded / event.total) * 100) +
+              '%'
+          );
+        } else if (event.type === HttpEventType.Response) {
+          console.log(event);
+        }
+        console.warn(event);
+      });
   }
 }
