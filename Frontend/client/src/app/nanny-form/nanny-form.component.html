@@ -1,14 +1,24 @@
-<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+<form
+  #userPost="ngForm"
+  (ngSubmit)="onSubmit(userPost.value)"
+  method="GET"
+  action="/profile"
+>
   <div class="form-group">
     <h4>Upload Profile Pic</h4>
+    <img [src]="url" height="200" width="200" alt="profile pic" /> <br />
     <input
       style="display: none"
       type="file"
       (change)="onFileSelected($event)"
       #fileInput
     />
-    <button type="button" (click)="fileInput.click()">Pick File</button>
-    <button type="button" (click)="onUpload()">Upload</button>
+    <button type="button" (click)="fileInput.click()">
+      upload profile pic
+    </button>
+    <button type="button" style="display: none" (click)="onUpload()">
+      Upload
+    </button>
 
     <br />
     <br />
