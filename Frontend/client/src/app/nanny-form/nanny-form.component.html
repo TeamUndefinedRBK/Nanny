@@ -1,4 +1,4 @@
-<form>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
   <div class="form-group">
     <h5>Upload Profile Pic</h5>
     <input
@@ -25,6 +25,7 @@
       id="firstName"
       type="text"
       class="form-control"
+      placeholder="First Name"
     />
     <label for="lastname">Last Name: </label>
     <input
@@ -37,6 +38,7 @@
       id="lastName"
       type="text"
       class="form-control"
+      placeholder="Last Name"
     />
 
     <br />
@@ -54,6 +56,7 @@
       id="age"
       type="number"
       class="form-control"
+      placeholder="Age"
     />
     <label for="email">email: </label>
     <input
@@ -66,6 +69,7 @@
       id="email"
       type="email"
       class="form-control"
+      placeholder="Email"
     />
 
     <br />
@@ -83,6 +87,7 @@
       id="region"
       type="text"
       class="form-control"
+      placeholder="Region"
     />
     <label for="phoneNumber">Phone Number: </label>
     <input
@@ -95,6 +100,7 @@
       id="phonenumber"
       type="number"
       class="form-control"
+      placeholder="Phone Number"
     />
 
     <br />
@@ -102,19 +108,64 @@
     <br />
   </div>
 
-  <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
-    <div *ngIf="firstName.errors?.required">First Name is required.</div>
-
-    <div *ngIf="firstName.errors?.minlength">
-      First Name minimum
-      {{ firstName.errors?.minlength.requiredLength }} characters.
+  <div class="warnings-section">
+    <div
+      class="alert alert-danger"
+      *ngIf="firstName.touched && !firstName.valid"
+    >
+      <div *ngIf="firstName.errors?.required">First Name is required.</div>
+      <div *ngIf="firstName.errors?.minlength">
+        First Name minimum
+        {{ firstName.errors?.minlength.requiredLength }} characters.
+      </div>
+      <div *ngIf="firstName.errors?.maxlength">
+        First Name should be maximum
+        {{ firstName.errors?.maxlength.requiredLength }}characters.
+      </div>
     </div>
 
-    <div *ngIf="firstName.errors?.maxlength">
-      First Name should be maximum{{
-        firstName.errors?.maxlength.requiredLength
-      }}
-      characters.
+    <div class="alert alert-danger" *ngIf="lastname.touched && !lastname.valid">
+      <div *ngIf="lastname.errors?.required">Last Name is required.</div>
+      <div *ngIf="lastname.errors?.minlength">
+        Last Name minimum
+        {{ lastname.errors?.minlength.requiredLength }} characters.
+      </div>
+      <div *ngIf="lastname.errors?.maxlength">
+        Last Name should be maximum
+        {{ lastname.errors?.maxlength.requiredLength }}characters.
+      </div>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="age.touched && !age.valid">
+      <div *ngIf="age.errors?.required">Age is required.</div>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+      <div *ngIf="email.errors?.required">Email is required.</div>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="region.touched && !region.valid">
+      <div *ngIf="region.errors?.required">region is required.</div>
+    </div>
+
+    <div
+      class="alert alert-danger"
+      *ngIf="phonenumber.touched && !phonenumber.valid"
+    >
+      <div *ngIf="phonenumber.errors?.required">Phone Number is required.</div>
+    </div>
+
+    <div
+      class="alert alert-danger"
+      *ngIf="phonenumber.touched && !phonenumber.valid"
+    >
+      <div *ngIf="phonenumber.errors?.required">
+        Filling About section required.
+      </div>
+      <div *ngIf="phonenumber.errors?.minlength">
+        about section should have least minimum of
+        {{ lastname.errors?.minlength.requiredLength }} characters.
+      </div>
     </div>
   </div>
 
@@ -132,7 +183,8 @@
       maxlength="500"
       #email="ngModel"
       type="text"
+      placeholder="Information About You"
     ></textarea>
   </div>
-  <button class="btn btnOne">Submit</button>
+  <button class="btn btnOne" type="submit">Submit</button>
 </form>
