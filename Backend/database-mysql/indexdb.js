@@ -3,7 +3,7 @@ var db = mysql.createConnection({
 host: "localhost",  
 user: "root",  
 password: "root"  , 
-database : 'Nannyform'
+database : 'USER'
 });  
 db
 module.exports.db=db

@@ -1,16 +1,16 @@
-DROP DATABASE IF EXISTS Nannyform;
-
-CREATE DATABASE Nannyform;
-
-USE Nannyform;
-
-/*CREATE TABLE items (
-  id int NOT NULL AUTO_INCREMENT,
-  quantity integer NOT NULL,
-  description varchar(50) NOT NULL,
-  PRIMARY KEY (ID)
+DROP DATABASE IF EXISTS USER;
+CREATE DATABASE USER;
+USE USER;
+CREATE TABLE User_table_register(
+id INT NOT NULL  AUTO_INCREMENT,
+FisrtName VARCHAR(255) NOT NULL ,
+LastName VARCHAR(255) NOT NULL ,
+Email VARCHAR(255)NOT NULL ,
+Pasword VARCHAR(255)NOT NULL ,
+verifypassword VARCHAR(255)NOT NULL ,
+PRIMARY KEY (id) 
 );
 
 /*  Execute this file from the command line by typing:
- *    mysql -u root < server/schema.sql
+ *    mysql -u root  < database-mysql/schema.sql 
  *  to create the database and the tables.*/

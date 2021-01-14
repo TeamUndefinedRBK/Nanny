@@ -24,7 +24,7 @@ app.use(bodyParser.json());
   //setup mySQL
   db.connect(function(err) {  
     if (err) throw err;  
-   console.log("Connected database");  
+   console.log("Connected database mysql successfully" );  
   });
    
 
