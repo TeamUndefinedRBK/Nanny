@@ -24,7 +24,7 @@ export class NannyFormComponent {
   //   this.phoneNumber;
   //   this.about = '';
   // }
-  selectedFile: File = null as any;
+  selectedFile: any = File;
   constructor(private http: HttpClient) {}
   // log(test: string) {
   //   console.log(test);
