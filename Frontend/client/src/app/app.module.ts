@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NannyFormComponent } from './nanny-form/nanny-form.component';
 import { FormsModule } from '@angular/forms';
+import { NannyProfileComponent } from '../app/nanny-profile/nanny-profile.component';
 
 @NgModule({
-  declarations: [AppComponent, NannyFormComponent],
+  declarations: [AppComponent, NannyFormComponent, NannyProfileComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
