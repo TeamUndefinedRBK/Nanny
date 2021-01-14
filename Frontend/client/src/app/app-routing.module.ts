@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-const routes: Routes = [];
+import {  NannyFormComponent} from './nanny-form/nanny-form.component'
+const routes: Routes = [
+  {path:'apply', component: NannyFormComponent},
+  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule ]
 })
 export class AppRoutingModule { }
