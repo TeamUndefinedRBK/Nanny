@@ -7,12 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { SigninComponent } from './signin/signin.component';
 @NgModule({
   declarations: [AppComponent,
     routingComponents,
       NavbarComponent, 
       FooterComponent, 
-      HomeComponent],
+      HomeComponent, SigninComponent],
 
   imports: [BrowserModule,
      AppRoutingModule, 
