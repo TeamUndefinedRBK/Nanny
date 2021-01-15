@@ -26,12 +26,13 @@ router.post(
       })
       .normalizeEmail(),
     body('Password').trim().isLength({ min: 7 }),
-    body('Verifypassword')
-      .isLength({ min: 7 })
-      .withMessage('Verifypassword is required.')
-      //probleme//
-      .matches('Password')
-      .withMessage('Passwords do not match')
+    // //body('Verifypassword')
+    // //.trim()
+    //   //.isLength({ min: 5 })
+    //   .withMessage('Verifypassword is required.')
+    //   //probleme//
+    //   .matches('Password')
+    //   .withMessage('Passwords do not match')
   ],
   authController.signup
 );

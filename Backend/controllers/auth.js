@@ -13,7 +13,7 @@ console.log( 'post on /register',req.body)
   const LastName=req.body.LastName
   const Email = req.body.Email;
   const Password = req.body.Password;
-
+  
 
   
     const salt = await bcrypt.genSalt();
@@ -26,7 +26,7 @@ console.log( 'post on /register',req.body)
     FirstName,
     LastName,
     Email,
-    hashedPassword 
+    Password:hashedPassword
   })
   console.log('result:',result)
   res.status(201).json({ message: 'User registered!',result });
