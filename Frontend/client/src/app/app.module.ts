@@ -9,16 +9,16 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 @NgModule({
-  declarations: [AppComponent,
+  declarations: [
+    AppComponent,
     routingComponents,
-      NavbarComponent, 
-      FooterComponent, 
-      HomeComponent, SigninComponent],
+    NavbarComponent,
+    FooterComponent,
+    HomeComponent,
+    SigninComponent,
+  ],
 
-  imports: [BrowserModule,
-     AppRoutingModule, 
-     FormsModule,
-    HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
