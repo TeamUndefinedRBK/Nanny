@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {  NannyFormComponent} from './nanny-form/nanny-form.component'
+import {  NannyFormComponent} from './nanny-form/nanny-form.component';
+import { SignupComponent } from './signup/signup.component';
+
 const routes: Routes = [
-  {path:'apply', component: NannyFormComponent},
+  {path:'Apply', component: NannyFormComponent},
+  {path: 'Signup', component: SignupComponent},
   
 ];
 
@@ -11,3 +14,4 @@ const routes: Routes = [
   exports: [RouterModule ]
 })
 export class AppRoutingModule { }
+export const routingComponents = [NannyFormComponent, SignupComponent]
