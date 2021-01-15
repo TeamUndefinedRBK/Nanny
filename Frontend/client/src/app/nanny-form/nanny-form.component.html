@@ -5,15 +5,16 @@
   action="/profile"
 >
   <div class="form-group">
-    <h4>Upload Profile Pic</h4>
-    <img [src]="url" height="200" width="200" alt="profile pic" /> <br />
+    <h1 class="upc">Upload Profile Pic :</h1>
+    <img class="upc" [src]="url" height="200" width="200" alt="profile pic" />
+    <br />
     <input
       style="display: none"
       type="file"
       (change)="onFileSelected($event)"
       #fileInput
     />
-    <button type="button" (click)="fileInput.click()">
+    <button type="button" (click)="fileInput.click()" class="btn btnOne">
       upload profile pic
     </button>
     <button type="button" style="display: none" (click)="onUpload()">
@@ -23,8 +24,7 @@
     <br />
     <br />
     <br />
-
-    <label for="firstName">First Name</label>
+    <label class="upc" for="firstName">First Name</label>
     <input
       required
       minlength="5"
@@ -51,7 +51,7 @@
         {{ firstName.errors?.maxlength.requiredLength }}characters.
       </div>
     </div>
-    <label for="lastname">Last Name: </label>
+    <label class="upc" for="lastname">Last Name: </label>
     <input
       required
       minlength="5"
@@ -80,7 +80,7 @@
     <br />
     <br />
 
-    <label for="age">age: </label>
+    <label class="upc" for="age">age: </label>
     <input
       required
       minlength="1"
@@ -98,7 +98,7 @@
       <div *ngIf="age.errors?.required">Age is required.</div>
     </div>
 
-    <label for="email">email: </label>
+    <label class="upc" for="email">email: </label>
     <input
       required
       minlength="5"
@@ -120,7 +120,7 @@
     <br />
     <br />
 
-    <label for="region">region: </label>
+    <label class="upc" for="region">region: </label>
     <input
       required
       minlength="5"
@@ -138,7 +138,7 @@
       <div *ngIf="region.errors?.required">region is required.</div>
     </div>
 
-    <label for="phoneNumber">Phone Number: </label>
+    <label class="upc" for="phoneNumber">Phone Number: </label>
     <input
       required
       minlength="5"
@@ -162,39 +162,39 @@
     <br />
     <br />
     <br />
-  </div>
-
-  <div class="form-group">
-    <label for="about">About</label
-    ><textarea
-      ngModel
-      name="about"
-      id="about"
-      cols="30"
-      rows="10"
-      class="form-control"
-      required
-      minlength="10"
-      maxlength="500"
-      #email="ngModel"
-      type="text"
-      placeholder="Information About You"
-    ></textarea>
-
-    <div
-      class="alert alert-danger"
-      *ngIf="phonenumber.touched && !phonenumber.valid"
-    >
-      <div *ngIf="phonenumber.errors?.required">
-        Filling About section required.
+    <!-- <div class="form-group"> -->
+      <label class="upc" for="about">About</label
+        ><textarea
+        ngModel
+        name="about"
+        id="about"
+        cols="30"
+        rows="10"
+        class="form-control"
+        required
+        minlength="10"
+        maxlength="500"
+        #email="ngModel"
+        type="text"
+        placeholder="Information About You"
+        ></textarea>
+        
+        <div
+        class="alert alert-danger"
+        *ngIf="phonenumber.touched && !phonenumber.valid"
+        >
+        <div *ngIf="phonenumber.errors?.required">
+          Filling About section required.
+        </div>
+        <div *ngIf="phonenumber.errors?.minlength">
+          about section should have least minimum of
+          {{ lastname.errors?.minlength.requiredLength }} characters.
+        </div>
       </div>
-      <div *ngIf="phonenumber.errors?.minlength">
-        about section should have least minimum of
-        {{ lastname.errors?.minlength.requiredLength }} characters.
-      </div>
-    </div>
+    <!-- </div> -->
+    
+    <button [routerLink]="'/profile'" class="btn btnOne" type="submit">
+      Submit
+    </button>
   </div>
-  <button [routerLink]="'/profile'" class="btn btnOne" type="submit">
-    Submit
-  </button>
 </form>
