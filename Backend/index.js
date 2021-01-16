@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 //require("dotenv").config();
 const {db}=require('./database-mysql/indexdb')
 authRoutes=require ('./routes/userRouter');
+  Nannyformrouter=require('./routes/NannyFormRouter')
 const app = express();
 
 const PORT = process.env.PORT || 5000;
@@ -27,7 +28,7 @@ app.use((req, res, next) => {
   .then(() => console.log('Connection has been established successfully.'))
   .catch(err => console.log('Unable to connect to the database:' + err))
   app.use('/', authRoutes)
-
+  app.use('/', Nannyformrouter)
 
 
 app.listen(PORT, () => console.log (`listening on port ${PORT} and To get started, visit: http://localhost:5000`))
