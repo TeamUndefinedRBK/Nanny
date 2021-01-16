@@ -15,12 +15,14 @@ router.post(
     body('LastName').trim().not().isEmpty(),
     body('Email').isEmail().withMessage('Please enter a valid email.')
       .custom(async (Email) => {
-        const user = await User_table_register.findAll({
-          attributes: ['Email']
+        const user = await User_table_register.findAll({ where: {
+          Email:Email
+        }
           
         });
         console.log("user:",user)
-        if (user[0].length > 0) {
+        if (user.length > 0) {
+          console.log(user)
           return Promise.reject('Email address already exist!');
         }
       })
@@ -36,6 +38,6 @@ router.post(
   ],
   authController.signup
 );
-
+router.post('/login', authController.login);
 
 module.exports = router;
