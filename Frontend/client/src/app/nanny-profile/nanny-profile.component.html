@@ -1,1 +1,31 @@
-<p>nanny-profile works!</p>
+<body>
+  <h1>Update Nanny Profile</h1>
+
+  <form action="nannys" method="POST">
+    <pre> 
+            <!-- <img class="upc" [src]="url" height="200" width="200" alt="profile pic" /> -->
+            First Name    : <input  [readonly]="isReadOnly" type="text" name="FirstName" value='nanny.FirstName'> <br> 
+            <button  type="button" (click)="readAndChange()"  >  edit    </button>
+
+            Last Name     : <input [readonly]="isReadOnly" type="text" name="LastName" value='<%=nanny.LastName%>'> <br> 
+            <button type="button" (click)="readAndChange()"  >  edit    </button>
+
+            Age   : <input [readonly]="isReadOnly" name="Age" value='<%=nanny.Age%>'> <br> 
+            <button type="button" (click)="readAndChange()"  >  edit    </button>
+
+            Email : <input [readonly]="isReadOnly" type="email" name="Email" value='<%=nanny.Email%>'> <br> 
+            <button type="button" (click)="readAndChange()" >  edit    </button>
+
+            Region     : <input [readonly]="isReadOnly" type="text" name="Region" value='<%=nanny.Region%>'> <br> 
+            <button type="button" (click)="readAndChange()"  >  edit    </button>
+
+            Phone Number   : <input [readonly]="isReadOnly" type="number" name="PhoneNumber" value='<%=nanny.PhoneNumber%>'> <br> 
+            <button type="button" (click)="readAndChange()" >  edit    </button>
+
+            About : <textarea  [readonly]="isReadOnly" type="text" name="About" value='<%=nanny.About%>' > </textarea> <br> 
+            <button type="button" (click)="readAndChange()"  >  edit    </button>
+
+            <input type="submit" value="Save Profile">  
+        </pre>
+  </form>
+</body>
