@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpEventType } from '@angular/common/http';
 @Component({
   selector: 'nanny-form',
   templateUrl: './nanny-form.component.html',
@@ -8,30 +7,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NannyFormComponent {
   selectedFile: any = File;
-
-  // onSubmit(data) {
-  //   this.http.post('', data).subscribe((res) => {
-  //     console.warn('res', res);
-  //   });
-  //   console.warn(data);
-  // }
-
+  onSubmit(data: any) {
+    this.http.post('', data).subscribe((res) => {
+      console.warn('res', res);
+    });
+    console.warn(data);
+  }
   constructor(private http: HttpClient) {}
   ngOnInit() {}
   url = './assets/';
   log(test: string) {
     console.log(test);
   }
-  // onFileSelected(event) {
-  //   if (event.target.files) {
-  //     var reader = new FileReader();
-  //     reader.readAsDataURL(event.target.files[0]);
-  //     reader.onload = (event: any) => {
-  //       this.url = event.target.result;
-  //     };
-  //   }
-  //   this.selectedFile = <File>event.target.files[0];
-  //}
+  onFileSelected(event: any) {
+    if (event.target.files) {
+      var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload = (event: any) => {
+        this.url = event.target.result;
+      };
+    }
+    this.selectedFile = <File>event.target.files[0];
+  }
   onUpload() {
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
@@ -40,17 +37,21 @@ export class NannyFormComponent {
         reportProgress: true,
         observe: 'events',
       })
-      // .subscribe((event) => {
-      //   if (event.type === HttpEventType.UploadProgress) {
-      //     console.warn(
-      //       'upload progress: ' +
-      //         Math.round((event.loaded / event.total) * 100) +
-      //         '%'
-      //     );
-      //   } else if (event.type === HttpEventType.Response) {
-      //     console.log(event);
-      //   }
-      //   console.warn(event);
-      // });
+      .subscribe((event) => {
+        if (event.type === HttpEventType.UploadProgress) {
+          // console.warn(
+          //   'upload progress: ' +
+          //     Math.round((event.loaded / event.total) * 100) +
+          //     '%'
+          // );
+        } else if (event.type === HttpEventType.Response) {
+          // console.log(event);
+        }
+        console.warn(event);
+      });
   }
- }
+}
+
+
+
+
