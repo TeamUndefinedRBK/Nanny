@@ -8,15 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class NannyProfileComponent {
   // constructor() {}
   isReadOnly = true;
-  nanny = {
-    FirstName: '3li',
-    LastName: '3loulou',
-    Age: 59,
-    Email: '3li.3loulou@3alela.3lol',
-    Region: 'sidi 3li',
-    PhoneNumber: 333333333,
-    About: 'aboutaboutaboutaboutaboutaboutaboutaboutaboutaboutaboutaboutabout',
-  };
+  // nanny = {
+  //   FirstName: '3li',
+  //   LastName: '3loulou',
+  //   Age: 59,
+  //   Email: '3li.3loulou@3alela.3lol',
+  //   Region: 'sidi 3li',
+  //   PhoneNumber: 333333333,
+  //   About: 'aboutaboutaboutaboutaboutaboutaboutaboutaboutaboutaboutaboutabout',
+  // };
 
   readAndChange() {
     this.isReadOnly = !this.isReadOnly;
