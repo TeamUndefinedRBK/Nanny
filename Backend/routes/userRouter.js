@@ -22,7 +22,6 @@ router.post(
         });
         console.log("user:",user)
         if (user.length > 0) {
-          console.log(user)
           return Promise.reject('Email address already exist!');
         }
       })

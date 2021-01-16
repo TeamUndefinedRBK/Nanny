@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NannyProfileComponent } from './nanny-profile/nanny-profile.component';
 import { NannyFormComponent } from './nanny-form/nanny-form.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -19,8 +20,8 @@ const routes: Routes = [
     ],
   },
   // {
-  //   path: 'profile',
-  //   component: NannyProfileComponent,
+  //   path: 'nannyslist',
+  //   component: HomeComponent,
   // },
 ];
 @NgModule({
@@ -28,4 +29,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-export const routingComponents = [NannyFormComponent]
+export const routingComponents = [NannyFormComponent];
