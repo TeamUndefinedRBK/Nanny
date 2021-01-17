@@ -11,7 +11,7 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
 export class RegisterComponent implements OnInit {
   
   onSubmit(data: any) {
-    this.http.post('', data).subscribe((res) => {
+    this.http.post('http://localhost:5000/Register', data).subscribe((res) => {
       console.warn('res', res);
     });
     console.warn(data);

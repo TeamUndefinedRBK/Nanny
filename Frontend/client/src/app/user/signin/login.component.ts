@@ -1,7 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import {NgForm} from '@angular/forms'
-
+import { HttpClient, HttpEventType } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,10 +9,23 @@ import {NgForm} from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   isLoginError : boolean = false;
-  constructor(private router : Router) { }
-
-  ngOnInit() {
+  constructor(private http: HttpClient) {}
+  ngOnInit() {}
+  url = './assets/';
+  log(test: string) {
   }
+
+
+  onSubmit(data: any) {
+    this.http.post('http://localhost:5000/login', data).subscribe((res) => {
+      console.warn('res', res);
+      
+    });
+  
+  }
+
+
+  
   onLogin(loginForm: NgForm) {
 
   }
