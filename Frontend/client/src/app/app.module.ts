@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './user/signin/login.component';
 import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './user/signup/register.component';
-
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,13 @@ import { RegisterComponent } from './user/signup/register.component';
     RegisterComponent,
   ],
 
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    // NgbModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
