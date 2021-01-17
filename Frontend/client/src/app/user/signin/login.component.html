@@ -1,5 +1,5 @@
 <div class="form-container sign-in-container">
-  <form action="#" >
+  <form #loginForm='ngForm' (ngSubmit)='onLogin(loginForm)' >
       <h1>Sign in</h1>
       <div class="social-container">
           <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -10,6 +10,6 @@
       <input type="email" #email ngModel email='email' placeholder="Email"  />
       <input type="password" #Password ngModel Password='Password' placeholder="Password" />
       <a href="#">Forgot your password?</a>
-      <button >Sign In</button>
+      <button [disabled]='!loginForm.valid'>Sign In</button>
   </form>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 
 
 @Component({
@@ -9,16 +10,21 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   
-
-  ngOnInit() {
-    
+  onSubmit(data: any) {
+    this.http.post('', data).subscribe((res) => {
+      console.warn('res', res);
+    });
+    console.warn(data);
   }
-  state: string = '';
-  error: any;
 
-  constructor(private router: Router) {
-
+  constructor(private http: HttpClient) {}
+  ngOnInit() {}
+  url = './assets/';
+  log(test: string) {
+    console.log(test);
   }
+
+  
 
   // onSubmit(formData) {
   //   if(formData.valid) {

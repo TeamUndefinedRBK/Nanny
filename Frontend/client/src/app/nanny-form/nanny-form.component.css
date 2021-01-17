@@ -7,10 +7,6 @@
   font-family: "Roboto", sans-serif;
   background: black;
 }
-body {
-  /* background-size: cover;
-  height: 100vh; */
-}
 
 .form-control.ng-touched.ng-invalid {
   border: 2px solid red;
@@ -64,14 +60,6 @@ body {
     radial-gradient(farthest-corner at var(--x) var(--y), #00c9a7, #845ec2)
       border-box;
 }
-.form-control,
-.msg {
-  /* width: 48%; */
-}
-.form-control .upc,
-.msg textarea {
-}
-
 .btn {
   padding: 5px;
   margin: 4%;

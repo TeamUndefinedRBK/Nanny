@@ -32,11 +32,11 @@ const routes: Routes = [
   //   component: HomeComponent,
   // },
 ];
+export const routingComponents = [NannyFormComponent,RegisterComponent,LoginComponent];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule,],
 })
 export class AppRoutingModule {}
 
-export const routingComponents = [NannyFormComponent,RegisterComponent,LoginComponent];
 

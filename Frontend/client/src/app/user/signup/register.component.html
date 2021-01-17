@@ -1,21 +1,43 @@
-<div class="form-container">
-    <a routerLink="/login" id="goback">Go back</a>
-  
-    <h2>Join now</h2>
-  
-    <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+
       
-    <form #formData='ngForm' >
+    <form  
+    #userPost="ngForm"
+    (ngSubmit)="onSubmit(userPost.value)"
+    method="GET" >
   
-        <input type="text" placeholder="Name" name="Name" class="txt" required>
-        <input type="text" placeholder="LastName" name="LastName" class="txt" required>
+        <input  required
+        minlength="5"
+        maxlength="20"
+        ngModel
+        name="firstName"
+        #firstName="ngModel"
+        id="firstName"
+        type="text"
+        class="form-control"
+        placeholder="First Name">
+        <input  required
+        minlength="5"
+        maxlength="20"
+        ngModel
+        name="lastName"
+        #lastname="ngModel"
+        id="lastName"
+        type="text"
+        class="form-control"
+        placeholder="Last Name">
         <input type="password" placeholder="Password" name="password" class="txt" required>
-      <input type="text" placeholder="Email address.." name="email" class="txt" required>
-      <input type="password" placeholder="Password" name="password" class="txt" required>
       <input type="repeatpassword" placeholder="repeatPassword"  name="repeatpassword" class="txt" required>
-      
+      <input required
+      minlength="5"
+      maxlength="20"
+      ngModel
+      name="email"
+      #email="ngModel"
+      id="email"
+      type="email"
+      class="form-control"
+      placeholder="Email">
   
   
-      <button type="submit" [disabled]="!formData.valid" class="basic-btn">Create my account</button>
+      <button type="submit"  class="basic-btn">Create my account</button>
     </form>
-  </div>

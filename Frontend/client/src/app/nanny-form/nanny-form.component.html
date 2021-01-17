@@ -8,12 +8,7 @@
     <h2 class="upc" style="text-align: center">Profile Pic</h2>
     <img class="upc" [src]="url" height="200" width="200" alt="profile pic" />
     <br />
-    <input
-      style="display: none"
-      type="file"
-      (change)="onFileSelected($event)"
-      #fileInput
-    />
+    <input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput />
     <button type="button" (click)="fileInput.click()" class="btn btnOne">
       upload profile pic
     </button>
@@ -25,18 +20,7 @@
     <br />
     <br />
     <label class="upc" for="firstName">First Name :</label>
-    <input
-      required
-      minlength="5"
-      maxlength="20"
-      ngModel
-      name="firstName"
-      #firstName="ngModel"
-      id="firstName"
-      type="text"
-      class="form-control"
-      placeholder="First Name"
-    />
+    <input required minlength="5" maxlength="20" ngModel #firstName="ngModel" id="firstName" type="text" class="form-control" placeholder="First Name"/>
     <div
       class="alert alert-danger"
       *ngIf="firstName.touched && !firstName.valid"
