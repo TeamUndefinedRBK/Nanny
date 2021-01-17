@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NannyProfileComponent } from './nanny-profile/nanny-profile.component';
 import { NannyFormComponent } from './nanny-form/nanny-form.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.component'
 import {RegisterComponent} from './user/signup/register.component';
 import {LoginComponent} from './user/signin/login.component'
+
 
 const routes: Routes = [
   {
@@ -37,6 +38,5 @@ export const routingComponents = [NannyFormComponent,RegisterComponent,LoginComp
   exports: [RouterModule,],
 })
 export class AppRoutingModule {}
-
 
 
