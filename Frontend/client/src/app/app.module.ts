@@ -7,7 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { SigninComponent } from './signin/signin.component';
+import { LoginComponent } from './user/signin/login.component';
+import { UserComponent } from './user/user.component';
+import {RegisterComponent} from './user/signup/register.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,9 @@ import { SigninComponent } from './signin/signin.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    SigninComponent,
+    LoginComponent,
+    UserComponent,
+    RegisterComponent,
   ],
 
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
