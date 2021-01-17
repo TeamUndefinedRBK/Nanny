@@ -2,13 +2,13 @@
     align-items:
 center;
 background-image: linear-gradient(120deg, #00e4d0, #5983e8);
-display:flex;
-font-family:
--apple-system;
-justify-content:
-flex-start;
-line-height:
-24px;
-text-align:
-left;
+
 }
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
