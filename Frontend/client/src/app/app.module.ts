@@ -12,7 +12,7 @@ import { UserComponent } from './user/user.component';
 
 
 import { RegisterComponent } from './user/signup/register.component';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,6 @@ import { RegisterComponent } from './user/signup/register.component';
   ],
 
 
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
 
   imports: [
     BrowserModule,

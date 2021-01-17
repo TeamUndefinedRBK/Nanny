@@ -9,9 +9,9 @@
         minlength="5"
         maxlength="20"
         ngModel
-        name="firstName"
-        #firstName="ngModel"
-        id="firstName"
+        name="FirstName"
+        #FirstName="ngModel"
+        id="FirstName"
         type="text"
         class="form-control"
         placeholder="First Name">
@@ -19,21 +19,21 @@
         minlength="5"
         maxlength="20"
         ngModel
-        name="lastName"
-        #lastname="ngModel"
-        id="lastName"
+        name="LastName"
+        #Lastname="ngModel"
+        id="LastName"
         type="text"
         class="form-control"
         placeholder="Last Name">
-        <input type="password" placeholder="Password" name="password" class="txt" required>
-      <input type="repeatpassword" placeholder="repeatPassword"  name="repeatpassword" class="txt" required>
+        <input   ngModel name="Password"   #Password="ngModel"   type="password" placeholder="Password"  class="txt" required>
+      <input type="password" placeholder="repeatPassword"  name="repeatpassword" class="txt" required>
       <input required
       minlength="5"
       maxlength="20"
       ngModel
-      name="email"
-      #email="ngModel"
-      id="email"
+      name="Email"
+      #Email="ngModel"
+      id="Email"
       type="email"
       class="form-control"
       placeholder="Email">
