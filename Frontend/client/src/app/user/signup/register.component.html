@@ -1,3 +1,7 @@
+
+
+
+
 <div class="form-container">
     <a routerLink="/login" id="goback">Go back</a>
   
@@ -5,14 +9,16 @@
   
     <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
       
-    <form #formData='ngForm' >
+    <form #formData='ngForm'          
+    #userPost="ngForm"
+    (ngSubmit)="onSubmit(userPost.value)"
+    method="GET" >
   
-        <input type="text" placeholder="Name" name="Name" class="txt" required>
-        <input type="text" placeholder="LastName" name="LastName" class="txt" required>
-        <input type="password" placeholder="Password" name="password" class="txt" required>
-      <input type="text" placeholder="Email address.." name="email" class="txt" required>
-      <input type="password" placeholder="Password" name="password" class="txt" required>
-      <input type="repeatpassword" placeholder="repeatPassword"  name="repeatpassword" class="txt" required>
+        <input      type="text" placeholder=" First Name" name="Name" class="txt" required>
+        <input  type="text" placeholder="Last Name" name="LastName" class="txt" required>
+      <input      type="text" placeholder="Email address.." name="email" class="txt" required>
+      <input      type="password" placeholder="Password" name="password" class="txt" required>
+      <input type="repeatpassword" placeholder="Verify Password"  name="repeatpassword" class="txt" required>
       
   
   

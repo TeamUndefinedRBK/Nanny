@@ -89,15 +89,7 @@ exports.FormNanny = async (req, res) => {
     const About = req.body.About;
     const Email = req.body.Email;
     console.log(
-      "req after nanny from",
-      LastName,
-      FirstName,
-      Age,
-      About,
-      Region,
-      Phonenumber,
-      Email
-    );
+      "req after nanny from", LastName, FirstName, Age,  About,  Region,  Phonenumber,  Email );
     //Insert  nanny and save it into table
     var resultNannyregisterted = await Register_NannyForm.create({
       FirstName,
@@ -108,6 +100,8 @@ exports.FormNanny = async (req, res) => {
       About,
       Email,
     });
+    var id1= resultNannyregisterted.id
+    console.log("testid",id1  )
     console.log("resultNannyregisterted:", resultNannyregisterted);
     res
       .status(201)
