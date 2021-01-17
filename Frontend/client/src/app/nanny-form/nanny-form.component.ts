@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
+
 @Component({
   selector: 'nanny-form',
   templateUrl: './nanny-form.component.html',
@@ -7,12 +8,14 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
 })
 export class NannyFormComponent {
   selectedFile: any = File;
+
   onSubmit(data: any) {
     this.http.post('', data).subscribe((res) => {
       console.warn('res', res);
     });
     console.warn(data);
   }
+
   constructor(private http: HttpClient) {}
   ngOnInit() {}
   url = './assets/';
@@ -51,7 +54,3 @@ export class NannyFormComponent {
       });
   }
 }
-
-
-
-
