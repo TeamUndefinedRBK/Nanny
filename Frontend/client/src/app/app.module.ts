@@ -9,10 +9,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './user/signin/login.component';
 import { UserComponent } from './user/user.component';
-import {RegisterComponent} from './user/signup/register.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
 
+
+import { RegisterComponent } from './user/signup/register.component';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
   ],
 
+
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    // NgbModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
