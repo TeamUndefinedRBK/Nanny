@@ -50,13 +50,12 @@ exports.login = async (req, res) => {
     }
 
     const storedUser = user[0];
-    console.log("stored password:", storedUser.Password);
+    console.log("stored password:", storedUser.Password );
     const isEqual = await bcrypt.compare(Password, storedUser.Password);
-    console.log("equality:", isEqual);
     if (!isEqual) {
       const error = new Error("Wrong password!");
       error.statusCode = 401;
-      throw error;
+      throw  error;
     }
     const token = jwt.sign(
       { userId: storedUser.id },
@@ -64,14 +63,10 @@ exports.login = async (req, res) => {
     );
 
     res
-      .status(200)
-      .json({
-        message: " O You welcome you have been loged iiin!",
-        token: token,
-        userId: storedUser.id,
-      });
+      .status(200).json({ message: "you are welcome " })
+
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ errorinthelogginauth: err.message });
   }
 };
 exports.FormNanny = async (req, res) => {
@@ -89,15 +84,7 @@ exports.FormNanny = async (req, res) => {
     const About = req.body.About;
     const Email = req.body.Email;
     console.log(
-      "req after nanny from",
-      LastName,
-      FirstName,
-      Age,
-      About,
-      Region,
-      Phonenumber,
-      Email
-    );
+      "req after nanny from", LastName, FirstName, Age, About, Region, Phonenumber, Email);
     //Insert  nanny and save it into table
     var resultNannyregisterted = await Register_NannyForm.create({
       FirstName,
@@ -108,6 +95,8 @@ exports.FormNanny = async (req, res) => {
       About,
       Email,
     });
+    var id1 = resultNannyregisterted.id
+    console.log("testid", id1)
     console.log("resultNannyregisterted:", resultNannyregisterted);
     res
       .status(201)

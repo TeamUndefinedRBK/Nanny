@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpEventType } from '@angular/common/http';
+export const environment = {
+  production: false,
+  isMockEnabled: false, // You have to switch this, when your real back-end is done
+  authTokenKey: 'x-auth-token',
+};
 
 @Component({
   selector: 'nanny-form',
@@ -10,9 +15,17 @@ export class NannyFormComponent {
   selectedFile: any = File;
 
   onSubmit(data: any) {
-    this.http.post('', data).subscribe((res) => {
-      console.warn('res', res);
-    });
+    let httpHeaders = new HttpHeaders();
+    const userToken = localStorage.getItem(environment.authTokenKey);
+    httpHeaders = httpHeaders.set('Authorization', 'Bearer ' + userToken);
+
+    this.http
+      .post('http://localhost:5000/nannys/nannyform', data, {
+        headers: httpHeaders,
+      })
+      .subscribe((res) => {
+        console.warn('res', res);
+      });
     console.warn(data);
   }
 

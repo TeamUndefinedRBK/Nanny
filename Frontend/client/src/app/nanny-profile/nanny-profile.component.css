@@ -27,6 +27,8 @@
 }
 
 button {
+  background-color: beige;
+  color: black;
   padding: 5px;
   margin-left: 80%;
   --x: 10%;
