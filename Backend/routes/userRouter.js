@@ -4,7 +4,7 @@ const { body } = require('express-validator');
 
 const router = express.Router();
 
-const User_table_register = require('../models/user');
+const User_table_register = require('../models/user.js');
 
 const authController = require('../controllers/auth.js');
 
@@ -15,12 +15,12 @@ router.post(
     body('LastName').trim().not().isEmpty(),
     body('Email').isEmail().withMessage('Please enter a valid email.')
       .custom(async (Email) => {
-        const user = await User_table_register.findAll({ where: {
-          Email:Email
-        }
-          
+        const user = await User_table_register.findAll({
+          where: {
+            Email: Email
+          }
         });
-        console.log("user:",user)
+        console.log("user:", user)
         if (user.length > 0) {
           return Promise.reject('Email address already exist!');
         }
