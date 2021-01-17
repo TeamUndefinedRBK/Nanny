@@ -9,7 +9,7 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
   isLoginError : boolean = false;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,router : Router) {}
   ngOnInit() {}
   url = './assets/';
   log(test: string) {

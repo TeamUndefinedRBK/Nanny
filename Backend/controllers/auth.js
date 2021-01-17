@@ -55,7 +55,7 @@ exports.login = async (req, res) => {
     if (!isEqual) {
       const error = new Error("Wrong password!");
       error.statusCode = 401;
-      throw error;
+      throw  error;
     }
     const token = jwt.sign(
       { userId: storedUser.id },
