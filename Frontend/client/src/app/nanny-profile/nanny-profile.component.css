@@ -45,6 +45,25 @@ button {
     radial-gradient(farthest-corner at var(--x) var(--y), #00c9a7, #845ec2)
       border-box;
 }
+.btn {
+  padding: 5px;
+  margin-left: 80%;
+  --x: 10%;
+  --y: 10%;
+
+  position: relative;
+  appearance: none;
+  padding: 1em 2em;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0))
+      padding-box,
+    radial-gradient(farthest-corner at var(--x) var(--y), #00c9a7, #845ec2)
+      border-box;
+}
 
 input,
 textarea {
