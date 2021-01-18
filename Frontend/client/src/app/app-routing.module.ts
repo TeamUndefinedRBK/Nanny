@@ -4,7 +4,8 @@ import { NannyProfileComponent } from './nanny-profile/nanny-profile.component';
 import { NannyFormComponent } from './nanny-form/nanny-form.component';
 import { HomeComponent } from './home/home.component'
 import {RegisterComponent} from './user/signup/register.component';
-import {LoginComponent} from './user/signin/login.component'
+import {LoginComponent} from './user/signin/login.component';
+import {NannyLComponent} from './nanny-l/nanny-l.component';
 
 
 const routes: Routes = [
@@ -23,16 +24,18 @@ const routes: Routes = [
       
     ], 
  
-  },  
+  },
+  {path: 'home', component: HomeComponent},  
   {path:'signup' , component: RegisterComponent},
-  {path:'signin',  component: LoginComponent}
+  {path:'signin',  component: LoginComponent},
+  {path:'nannyslist', component: NannyLComponent},
     
   // {
   //   path: 'nannyslist',
   //   component: HomeComponent,
   // },
 ];
-export const routingComponents = [NannyFormComponent,RegisterComponent,LoginComponent];
+export const routingComponents = [NannyLComponent,HomeComponent,NannyFormComponent,RegisterComponent,LoginComponent];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule,],
