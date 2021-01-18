@@ -1,19 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpHeaders,HttpEventType } from '@angular/common/http';
+export const environment = {
+  production: false,
+  isMockEnabled: false, // You have to switch this, when your real back-end is done
+  authTokenKey: 'x-auth-token'
+};
+
+
 
 @Component({
   selector: 'nanny-form',
   templateUrl: './nanny-form.component.html',
   styleUrls: ['./nanny-form.component.css'],
 })
+
 export class NannyFormComponent {
   selectedFile: any = File;
 
   onSubmit(data: any) {
-    this.http.post('', data).subscribe((res) => {
+    let httpHeaders = new HttpHeaders();
+    const userToken = localStorage.getItem(environment.authTokenKey);
+    httpHeaders = httpHeaders.set('Authorization', 'Bearer ' + userToken);
+
+
+
+    this.http.post('http://localhost:5000/Nannys/nannyform', data,{headers: httpHeaders}).subscribe((res) => {
       console.warn('res', res);
     });
-    console.warn(data);
+    console.warn(data)
   }
 
   constructor(private http: HttpClient) {}

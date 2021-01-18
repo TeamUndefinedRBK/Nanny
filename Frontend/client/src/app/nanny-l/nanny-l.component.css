@@ -1,8 +1,28 @@
 .example-card {
     max-width: 400px;
-  }
   
-  .example-header-image {
-   
-    background-size: cover;
+
+  }
+
+  button {
+    border-radius: 20px;
+    border: 1px solid #2bf8ff;
+    background: linear-gradient(to right, #8a6deb, #59afe8);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
   }
