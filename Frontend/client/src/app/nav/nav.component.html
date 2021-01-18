@@ -1,0 +1,30 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-toolbar > 
+      <span>nanny's</span>
+      <li className='nav-item'>
+        <button href='/Home' className='nav-links' onClick={closeMobileMenu}>
+          Home
+        </button>
+      </li>
+      <li className='nav-item'>
+        <button
+          href='/Login'
+          className='nav-links'
+          onClick={closeMobileMenu}
+        >
+          Sign in
+        </button>
+      </li>
+      <li>
+        <button
+          href='/Register'
+          className='nav-links'
+          onClick={closeMobileMenu}
+        >
+          Sign Up
+        </button>
+      </li>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>
+

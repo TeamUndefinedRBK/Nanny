@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegisterComponent} from './register.component';
+import { NannyInfoComponent } from './nanny-info.component';
 
-describe('RegisterComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+describe('NannyInfoComponent', () => {
+  let component: NannyInfoComponent;
+  let fixture: ComponentFixture<NannyInfoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegisterComponent ]
+      declarations: [ NannyInfoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(NannyInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
