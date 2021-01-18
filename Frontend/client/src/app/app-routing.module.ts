@@ -10,7 +10,7 @@ import {NannyLComponent} from './nanny-l/nanny-l.component';
 
 const routes: Routes = [
   {
-    path: 'nannys',
+    // path: 'nannys',
     // component: NannyFormComponent,
     children: [
       {
@@ -35,8 +35,6 @@ const routes: Routes = [
 export const routingComponents = [NannyLComponent,HomeComponent,NannyFormComponent,RegisterComponent,LoginComponent];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule,],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
-
-
